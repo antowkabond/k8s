@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-web
+spec:
+  containers:
+    - name:  container-apache
+      image: antowkabond/k8php:lates
+      ports:
+        - containerPort: 80

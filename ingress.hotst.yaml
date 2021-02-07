@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-hosts
+
+spec:
+  rules:
+    - host: www.anton.makarov.net
+      http:
+        path:
+          - backend: 
+            serviceName: web1
+            servicePort: 80
+    - host: www.anton.makarov1.net
+      http:
+        path:
+          - backend: 
+            serviceName: web2
+            servicePort: 80

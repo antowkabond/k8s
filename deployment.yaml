@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-web-deployment
+  labels: 
+    app: my-k8s-app
+spec:
+  selector:
+    matchLabels:
+      project: kgb
+  template:
+    metadata: 
+      labels: 
+        project: kgb
+    spec:
+      containers:
+        - name: kgb-web
+          image: antowkabond/k8php:lates
+          ports: 
+            - containerPort: 80
